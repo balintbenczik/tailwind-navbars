@@ -7,22 +7,71 @@
     <title>Document</title>
   </head>
 
-  <body class="bg-gray-800">
-    <!-- 🔹 NAVBAR -->
-    <div class="hidden md:flex items-center bg-pink-100 h-30 p-8">
-      <div class="flex w-[30%] justify-start">
+  <body class="bg-gray-200">
+  <!-- 🔹 NAVBAR -->
+  <div class="bg-pink-200 p-8">
+    <div class="flex items-center justify-between h-30">
+      <div class="flex flex-shrink-0 w-[30%] justify-start">
         <img
           src="https://dummyimage.com/200x80/000/fff"
           alt="logo"
           class="rounded"
         />
       </div>
-      <div class="flex w-[70%] justify-end space-x-10 text-black">
-        <p class="hover:text-gray-700 cursor-pointer">Home</p>
-        <p class="hover:text-gray-700 cursor-pointer">About us</p>
-        <p class="hover:text-gray-700 cursor-pointer">Prices</p>
-        <p class="hover:text-gray-700 cursor-pointer">References</p>
+
+      <!-- Asztali menü -->
+      <div class="hidden md:flex w-[70%] justify-end space-x-10 text-black">
+        <a href="#" class="hover:text-gray-700 cursor-pointer">Home</a>
+        <a href="#" class="hover:text-gray-700 cursor-pointer">About us</a>
+        <a href="#" class="hover:text-gray-700 cursor-pointer">Prices</a>
+        <a href="#" class="hover:text-gray-700 cursor-pointer">References</a>
+      </div>
+
+      <!-- Menü gomb (mobilon) -->
+      <div class="md:hidden flex">
+        <button
+          id="menu-btn"
+          class="text-gray-700 hover:text-blue-600 focus:outline-none"
+        >
+          <!-- Hamburger ikon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
       </div>
     </div>
-  </body>
+
+    <!-- 🔽 Mobil menü (most már alatta) -->
+    <div
+      id="mobile-menu"
+      class="hidden md:hidden bg-pink-100 mt-3 px-4 pb-3 space-y-2 rounded"
+    >
+      <a href="#" class="block text-gray-700 hover:text-blue-600">Kezdőlap</a>
+      <a href="#" class="block text-gray-700 hover:text-blue-600">Rólunk</a>
+      <a href="#" class="block text-gray-700 hover:text-blue-600">Szolgáltatások</a>
+      <a href="#" class="block text-gray-700 hover:text-blue-600">Kapcsolat</a>
+    </div>
+  </div>
+
+  <!-- Kis JS, hogy működjön a hamburger menü -->
+  <script>
+    const btn = document.getElementById("menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  </script>
+</body>
+
 </html>
