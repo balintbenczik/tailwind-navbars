@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="hu">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tailwind Navbar</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+      </head>
+      <body class="bg-gray-100">
+        <!-- 🔹 NAVBAR -->
+        <nav class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+              <!-- Logó -->
+              <div class="flex-shrink-0">
+                <a href="#" class="text-2xl font-bold text-blue-600"
+                  >ZsebKirály</a
+                >
+              </div>
+
+              <!-- Menü gomb (mobilon) -->
+              <div class="md:hidden">
+                <button
+                  id="menu-btn"
+                  class="text-gray-700 hover:text-blue-600 focus:outline-none"
+                >
+                  <!-- Hamburger ikon -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Menü elemek (asztali nézetben) -->
+              <div class="hidden md:flex space-x-6">
+                <a href="#" class="text-gray-700 hover:text-blue-600"
+                  >Kezdőlap</a
+                >
+                <a href="#" class="text-gray-700 hover:text-blue-600">Rólunk</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600"
+                  >Szolgáltatások</a
+                >
+                <a href="#" class="text-gray-700 hover:text-blue-600"
+                  >Kapcsolat</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobil menü (alapból rejtve) -->
+          <div
+            id="mobile-menu"
+            class="hidden md:hidden bg-white px-4 pb-3 space-y-2"
+          >
+            <a href="#" class="block text-gray-700 hover:text-blue-600"
+              >Kezdőlap</a
+            >
+            <a href="#" class="block text-gray-700 hover:text-blue-600"
+              >Rólunk</a
+            >
+            <a href="#" class="block text-gray-700 hover:text-blue-600"
+              >Szolgáltatások</a
+            >
+            <a href="#" class="block text-gray-700 hover:text-blue-600"
+              >Kapcsolat</a
+            >
+          </div>
+        </nav>
+
+        <!-- Kis JS, hogy működjön a hamburger menü -->
+        <script>
+          const btn = document.getElementById("menu-btn");
+          const menu = document.getElementById("mobile-menu");
+          btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+          });
+        </script>
+
+        <!-- Teszt tartalom, hogy lásd a fix navbar hatását -->
+        <div class="pt-20 p-4">
+          <h1 class="text-3xl font-bold text-center text-gray-700">
+            Reszponzív Navbar Példa
+          </h1>
+          <p class="mt-4 text-center text-gray-500">
+            Görgess lejjebb, hogy lásd, fixen marad a tetején 👇
+          </p>
+          <div class="h-[1500px]"></div>
+        </div>
+      </body>
+    </html>
+  </body>
+</html>
